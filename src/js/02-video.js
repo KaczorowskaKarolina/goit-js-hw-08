@@ -1,34 +1,3 @@
-// // Pobieranie elementu <iframe> o określonym ID
-// var vimeoPlayer = document.getElementById('vimeo-player');
-
-// // Funkcja, która zapisuje aktualny czas odtwarzania wideo w local storage
-// function savePlaybackTime() {
-//   // Pobieranie aktualnego czasu odtwarzania wideo
-//   var currentTime = vimeoPlayer.currentTime;
-
-//   // Zapisywanie czasu w local storage
-//   localStorage.setItem('playbackTime', currentTime);
-// }
-
-// // Funkcja, która odtwarza wideo od zapisanego momentu
-// function playFromSavedTime() {
-//   // Sprawdzanie, czy czas jest zapisany w local storage
-//   if (localStorage.getItem('playbackTime')) {
-//     // Pobieranie zapisanego czasu
-//     var savedTime = parseFloat(localStorage.getItem('playbackTime'));
-
-//     // Ustawianie czasu odtwarzania wideo na zapisany moment
-//     vimeoPlayer.currentTime = savedTime;
-//   }
-// }
-
-// // Wywołanie funkcji savePlaybackTime przy każdej zmianie czasu odtwarzania wideo
-// vimeoPlayer.addEventListener('timeupdate', savePlaybackTime);
-
-// // Wywołanie funkcji playFromSavedTime przy ładowaniu strony
-// window.addEventListener('load', playFromSavedTime);
-
-
 import Player from '@vimeo/player';
 import throttle from 'lodash.throttle';
 
@@ -53,4 +22,4 @@ player.on('timeupdate', function(data) {
     throttledUpdateTime(currentTime);
   });
 
-  
+
