@@ -29,10 +29,14 @@ form.addEventListener('input', saveFormState);
 // Clear storage and form fields on form submit
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  console.log('Form submitted!', {
-    email: emailField.value,
-    message: messageField.value,
-  });
-  localStorage.removeItem('feedback-form-state');
-  form.reset();
+  if (emailField.value === '' || messageField.value === '') {
+    console.log('Please fill in all fields before submitting');
+  } else {
+    console.log('Form submitted!', {
+      email: emailField.value,
+      message: messageField.value,
+    });
+    localStorage.removeItem('feedback-form-state');
+    form.reset();
+  }
 });
