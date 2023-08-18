@@ -42,3 +42,4 @@ player.on('play', function() {
 player.on('ended', function() {
     player.setCurrentTime(0);
 });
+//
